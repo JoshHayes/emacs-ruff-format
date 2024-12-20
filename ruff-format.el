@@ -50,7 +50,7 @@
 (reformatter-define ruff-check
   :program ruff-format-command
   :args (list "check" "--fix" "--stdin-filename" (or (buffer-file-name) input-file))
-  :lighter " RuffFmt"
+  :lighter " RuffChk"
   :group 'ruff-format)
 
 
