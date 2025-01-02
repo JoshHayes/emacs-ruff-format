@@ -44,5 +44,15 @@
   :lighter " RuffFmt"
   :group 'ruff-format)
 
+;;;###autoload (autoload 'ruff-check-buffer "ruff-check" nil t)
+;;;###autoload (autoload 'ruff-check-region "ruff-check" nil t)
+;;;###autoload (autoload 'ruff-check-on-save-mode "ruff-check" nil t)
+(reformatter-define ruff-check
+  :program ruff-format-command
+  :args (list "check" "--fix" "--stdin-filename" (or (buffer-file-name) input-file))
+  :lighter " RuffChk"
+  :group 'ruff-format)
+
+
 (provide 'ruff-format)
 ;;; ruff-format.el ends here
